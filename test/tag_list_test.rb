@@ -63,6 +63,7 @@ class TagListTest < ActiveSupport::TestCase
     
     assert_equal %w(One Two), TagList.from("One Two")
     assert_equal ['One two', 'three', 'four'], TagList.from('"One two" three four')
+    assert_equal ['One two', 'three four', 'five six'], TagList.from('"One two" "three four" "five six"')
   ensure
     TagList.delimiter = ","
   end

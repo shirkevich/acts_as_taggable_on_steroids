@@ -94,7 +94,7 @@ class TagList < Array
             
             # Parse the quoted tags
             [
-              /\s*#{delimiter}\s*(['"])(.*?)\1\s*/,
+              /\s*#{delimiter}\s*(['"])(.*?)\1/,
               /^\s*(['"])(.*?)\1\s*#{delimiter}?/
             ].each do |re|
               string.gsub!(re) { tag_list << $2; "" }
